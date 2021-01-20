@@ -1,7 +1,83 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLadder, function (sprite, location) {
-    game.over(true)
+    if (Level == 0) {
+        info.changeScoreBy(1)
+        Level += 1
+        tiles.setTilemap(tiles.createTilemap(hex`1000100002020202020202020202020202020202030101010201010101010204050201080202020102010202020102060702010202010101010102010201020202020102020102020202020102010202020201020201020102010101020102020101010202010201020102020201020201020102020101010201010101010202010201020202020202010202020202020102020202010101010101010201010201010102020102020202020102010202020201020201020101010201020102010102010202010201020202010201020102020102020102010201020102010201020201020201010102010101010101010101010202020202020202020202020202020202`, img`
+            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+            . . . . 2 . . . . . 2 . . 2 . . 
+            2 2 2 . 2 . 2 2 2 . 2 . . 2 . 2 
+            2 . . . . . 2 . 2 . 2 2 2 2 . 2 
+            2 . 2 2 2 2 2 . 2 . 2 2 2 2 . 2 
+            2 . 2 . 2 . . . 2 . 2 2 . . . 2 
+            2 . 2 . 2 . 2 2 2 . 2 2 . 2 . 2 
+            2 . . . 2 . . . . . 2 2 . 2 . 2 
+            2 2 2 2 2 . 2 2 2 2 2 2 . 2 2 2 
+            2 . . . . . . . 2 . . 2 . . . 2 
+            2 . 2 2 2 2 2 . 2 . 2 2 2 2 . 2 
+            2 . 2 . . . 2 . 2 . 2 . . 2 . 2 
+            2 . 2 . 2 2 2 . 2 . 2 . 2 2 . 2 
+            2 . 2 . 2 . 2 . 2 . 2 . 2 2 . 2 
+            2 . . . 2 . . . . . . . . . . 2 
+            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+            `, [myTiles.transparency16,sprites.dungeon.darkGroundCenter,sprites.dungeon.floorDark2,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder], TileScale.Sixteen))
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+        info.startCountdown(15)
+    } else if (Level == 1) {
+        info.changeScoreBy(1)
+        Level += 1
+        tiles.setTilemap(tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, [myTiles.transparency16], TileScale.Sixteen))
+        info.startCountdown(10)
+    } else {
+    	
+    }
 })
-let mySprite = sprites.create(img`
+info.onCountdownEnd(function () {
+    info.changeLifeBy(-1)
+    tiles.setTilemap(tiles.createTilemap(hex`1000100003030303030303030303030303030303030404040404040404040403040404030304030403030303030304030403040303040304030404040403040304030403030403040303030304030403040303030304030404040403040304030404040303040303030304030403040304030403030404040403040304040403040304030303030304030303030304030403040303040404040404040303040404030403030403030303030403030303030304030304030404040304030403040404040303040304030303040304030403030403030403040304030403040304030404030104040403040404040403040304030303030303030303030303030303020303`, img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 . . . . . . . . . . 2 . . . 2 
+        2 . 2 . 2 2 2 2 2 2 . 2 . 2 . 2 
+        2 . 2 . 2 . . . . 2 . 2 . 2 . 2 
+        2 . 2 . 2 2 2 2 . 2 . 2 . 2 2 2 
+        2 . 2 . . . . 2 . 2 . 2 . . . 2 
+        2 . 2 2 2 2 . 2 . 2 . 2 . 2 . 2 
+        2 . . . . 2 . 2 . . . 2 . 2 . 2 
+        2 2 2 2 . 2 2 2 2 2 . 2 . 2 . 2 
+        2 . . . . . . . 2 2 . . . 2 . 2 
+        2 . 2 2 2 2 2 . 2 2 2 2 2 2 . 2 
+        2 . 2 . . . 2 . 2 . 2 . . . . 2 
+        2 . 2 . 2 2 2 . 2 . 2 . 2 2 . 2 
+        2 . 2 . 2 . 2 . 2 . 2 . 2 . . 2 
+        . . . . 2 . . . . . 2 . 2 . 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 2 
+        `, [myTiles.transparency16,sprites.dungeon.stairLarge,sprites.dungeon.stairLadder,sprites.dungeon.floorDark2,sprites.dungeon.darkGroundCenter], TileScale.Sixteen))
+    tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+    Level = 0
+    info.startCountdown(15)
+})
+info.onLifeZero(function () {
+    game.over(false)
+})
+let Level = 0
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . f f f f f f . . . . 
     . . . . f f e e e e f 2 f . . . 
@@ -41,3 +117,6 @@ tiles.setTilemap(tiles.createTilemap(hex`100010000303030303030303030303030303030
 tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
 scene.cameraFollowSprite(mySprite)
 info.startCountdown(15)
+Level = 0
+info.setScore(0)
+info.setLife(3)
