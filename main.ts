@@ -9,9 +9,15 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLadder, function (sp
         info.changeScoreBy(1)
         Level += 1
         tiles.setTilemap(tilemap`level4`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairEast)
+        info.startCountdown(15)
+    } else if (Level == 2) {
+        info.changeScoreBy(1)
+        Level += 1
+        tiles.setTilemap(tilemap`level10`)
         tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairNorth)
         info.startCountdown(15)
-    } else {
+    } else if (false) {
     	
     }
 })
@@ -21,20 +27,30 @@ info.onCountdownEnd(function () {
         tiles.setTilemap(tilemap`level1`)
         tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
         Level = 0
+        info.setScore(1)
         info.startCountdown(15)
     } else if (Level == 1) {
         info.changeLifeBy(-1)
         tiles.setTilemap(tilemap`level3`)
         tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
         Level = 1
+        info.setScore(2)
         info.startCountdown(15)
     } else if (Level == 2) {
         info.changeLifeBy(-1)
         tiles.setTilemap(tilemap`level4`)
-        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairNorth)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairEast)
         Level = 2
+        info.setScore(3)
         info.startCountdown(15)
-    } else {
+    } else if (Level == 3) {
+        info.changeLifeBy(-1)
+        tiles.setTilemap(tilemap`level10`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairNorth)
+        Level = 3
+        info.setScore(4)
+        info.startCountdown(15)
+    } else if (false) {
     	
     }
 })
@@ -67,5 +83,5 @@ tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
 scene.cameraFollowSprite(mySprite)
 info.startCountdown(15)
 Level = 0
-info.setScore(0)
+info.setScore(1)
 info.setLife(3)
