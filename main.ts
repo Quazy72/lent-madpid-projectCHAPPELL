@@ -57,8 +57,13 @@ info.onCountdownEnd(function () {
         Level = 3
         info.setScore(4)
         info.startCountdown(15)
-    } else if (false) {
-    	
+    } else if (Level == 4) {
+        info.changeLifeBy(-1)
+        tiles.setTilemap(tilemap`level12`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+        Level = 4
+        info.setScore(5)
+        info.startCountdown(15)
     }
 })
 info.onLifeZero(function () {
