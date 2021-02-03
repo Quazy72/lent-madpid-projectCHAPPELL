@@ -160,6 +160,19 @@
         ],
         "displayName": "level11"
     },
+    "level12": {
+        "id": "level12",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMjAyMDIwMjAyMDIwMjAyMDEwMjAyMDIwMjAyMDEwMTAyMDEwMjAxMDEwMTAxMDEwMTAyMDEwMTAxMDIwMTAxMDIwMTAyMDEwMjAyMDIwMjAyMDIwMTAyMDEwMjAxMDEwMjAxMDEwMTAyMDEwMjAxMDEwMTAxMDIwMTAyMDEwMzAyMDIwMjAyMDIwMTAyMDEwMjAyMDIwMjAxMDIwMTAxMDIwMTAxMDEwMTAxMDIwMTAyMDEwMTAxMDEwMjAxMDEwMjAxMDIwMjAyMDIwMjAxMDIwMjAyMDIwMjAyMDEwMTAyMDEwMTAxMDEwMTAxMDEwMjAxMDEwMTAxMDEwMTAxMDIwMjAxMDIwMjAyMDIwMjAyMDEwMTAyMDIwMjAxMDEwMTAyMDEwMjAxMDEwMTAxMDEwMTAyMDIwMTAyMDQwMTAyMDIwMTAyMDIwMjAyMDIwMjAxMDIwMTAxMDEwMTAxMDIwMTAxMDEwMTAxMDEwMTAyMDIwMjAxMDEwMjAxMDEwMjAxMDIwMjAyMDIwMjAxMDEwMTAxMDEwMTAyMDEwMTAyMDIwMjAxMDEwMTAyMDIwMjAyMDIwMjAyMDIwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMjIyMjIyMjIyMjIyMjIyMjAyMDAwMDAwMjAwMDAwMjAwMjAyMjIyMjIyMjAyMjIwMDIwMjAyMDAwMDIwMjAyMDAyMjIwMjAyMjIyMjIwMjAwMDAwMDAwMjAyMDAyMDIwMDIyMjIyMDIwMjIyMjIyMDAyMDIwMDAwMDIwMDAwMjAwMjIyMjIyMjAyMjIyMjIyMDIyMDAwMDAwMDIyMDAyMDIyMjAyMDIyMjIwMjIwMDAwMjIwMDAwMDAwMDIyMjIyMDIyMjIyMjIwMjAwMjIyMDAyMDIwMDAwMjIyMjIyMjAwMjAwMjIwMjAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.builtin.brick",
+            "sprites.dungeon.darkGroundCenter",
+            "sprites.dungeon.stairLarge",
+            "sprites.dungeon.stairLadder"
+        ],
+        "displayName": "level12"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

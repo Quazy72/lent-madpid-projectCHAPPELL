@@ -17,8 +17,15 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLadder, function (sp
         tiles.setTilemap(tilemap`level10`)
         tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairNorth)
         info.startCountdown(15)
-    } else if (false) {
-    	
+    } else if (Level == 3) {
+        info.changeScoreBy(1)
+        Level += 1
+        tiles.setTilemap(tilemap`level12`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+        info.startCountdown(15)
+    } else if (Level == 4) {
+        effects.confetti.startScreenEffect(2000)
+        game.over(true)
     }
 })
 info.onCountdownEnd(function () {
